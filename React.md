@@ -76,7 +76,42 @@ his funny tag syntax is neither a string nor HTML.
 
 It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
 
+![](2021-05-16-02-14-00.png)
+tools like **babel**.
+
 ## Why Jsx ?
 React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
 
 React doesn’t require using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+
+
+## JSX VS HTML
+![](2021-05-16-16-15-37.png)
+
+1. the inline styling is like 
+   - **remember**  double braces {{}} and element rather say other than jsx element we wrap it in string as '**property**'
+   - so for just convention we use jsx properties we use "" and for non jsx ''(single quotes).
+   ![](2021-05-16-16-16-06.png)
+
+2. we use diff class notation for div in jsx just to distinguish it from class we use in javascript and the styling or notation class
+   ```
+    <label className="label" htmlFor="name">Enter name :</label>
+    ```
+    like className and htmlFor here
+
+3. variable referencing or function referencing 
+![](2021-05-16-16-23-55.png) 
+just declare a variable or constant or function and we can call it using { } where we want. 
+
+**Note** 
+```
+const buttonText = { text : 'Click me' }; 
+```
+doesnot work when called using **{buttonText}**. beacuse  javascript object cannot be a react child so 
+**fix** is **{buttonText.text}** instead of that this will call or read the 'click me'. from js object.
+
+
+ ## 3 Tents of Components
+ ![](2021-05-16-16-45-53.png)
+
+ 

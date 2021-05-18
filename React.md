@@ -110,8 +110,12 @@ const buttonText = { text : 'Click me' };
 doesnot work when called using **{buttonText}**. beacuse  javascript object cannot be a react child so 
 **fix** is **{buttonText.text}** instead of that this will call or read the 'click me'. from js object.
 
+```
+Semantic UI CDN Link
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+```
 
  ## 3 Tents of Components
  ![](2021-05-16-16-45-53.png)
 
- 

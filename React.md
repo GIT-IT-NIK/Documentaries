@@ -117,6 +117,9 @@ Semantic UI CDN Link
 ```
 
  ## 3 Tents of Components
+
+ -  ### Component
+
  ![](2021-05-16-16-45-53.png)
 
 ![](2021-05-27-01-40-22.png) 
@@ -179,7 +182,7 @@ const CommentDetail = () =>{
   );
 }
 
-export default CommentDetail; (add this at last)
+export default CommentDetail; (add this at last so that we can use it as component in our main js file and import it)
 
 and add import line on the main file 
 import CommentDetail from './CommentDetail';
@@ -204,5 +207,16 @@ const CommentDetail = props =>{
 }
 ```
 
+- ### REUSE 
 
+This feature we use to inherit same classes to make similiar items such as buttons or cards or some divs with class inorder to make things look simpler and it creates tags with names for the further reusabilty of it.
+
+![](2021-05-28-03-39-56.png)
+
+The highlighted one is the tag we created called **Segment** which contains the box css properties and being used by 2 sections or divisions .
+
+## CLASS BASED *COMPONENTS*
+![](2021-05-28-03-42-20.png)
+
+Lets discuss the class components
 

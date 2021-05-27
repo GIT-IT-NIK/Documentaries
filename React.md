@@ -119,3 +119,90 @@ Semantic UI CDN Link
  ## 3 Tents of Components
  ![](2021-05-16-16-45-53.png)
 
+![](2021-05-27-01-40-22.png) 
+
+normal process of creating 
+```
+return (
+      <div className="ui container comments">
+        <div className="comment">
+          <a href="/" className="avatar">
+            <img alt="avatar" src={faker.image.avatar()} />
+          </a>
+          <div className="content">
+            <a href="/" className="author">
+              Sam
+            </a>
+            <div className="metadata">
+              <span className="date">Today at 6:00PM</span>
+            </div>
+            <div className="text">Nice blog post!</div>
+          </div>
+        </div>
+      </div>
+    );
+```
+
+Faker .JS  for  fake names and all
+```
+npm install --save faker
+
+and add this on the file
+import faker from 'faker';
+```
+![](2021-05-27-01-53-31.png)
+
+component nesting
+
+Component helps u to create reusable code and the above code for blog becomes a function named **CommentDetail**
+like
+```
+import faker from 'faker';
+
+const CommentDetail = () =>{
+  return (
+    <div className="comment">
+          <a href="/" className="avatar">
+            <img alt="avatar" src={faker.image.avatar()} />
+          </a>
+          <div className="content">
+            <a href="/" className="author">
+              {faker.name.findName()}
+            </a>
+            <div className="metadata">
+              <span className="date">Today at 6:00PM</span>
+            </div>
+            <div className="text">{faker.lorem.sentence()}</div>
+    </div>
+</div>
+
+  );
+}
+
+export default CommentDetail; (add this at last)
+
+and add import line on the main file 
+import CommentDetail from './CommentDetail';
+```
+now we can use the function as a tag to write or create the multiple blogs
+with just 
+```
+<CommentDetail/>
+```
+
+## REACT PROPS SYSTEM
+![](2021-05-28-02-12-18.png) for different entry
+![](2021-05-28-02-12-59.png) so new parameters gets passed and no **limitations** on the no. of parameters
+
+#### Syntax of a Prop
+![](2021-05-28-02-14-09.png)
+
+and for props to be effective we need to add them in the function argument that we are using 
+```
+const CommentDetail = props =>{
+  {props.author} ---> instead of the name 
+}
+```
+
+
+

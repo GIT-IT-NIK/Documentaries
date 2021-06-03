@@ -220,3 +220,114 @@ The highlighted one is the tag we created called **Segment** which contains the 
 
 Lets discuss the class components
 
+compenents of the class 
+![](2021-05-28-13-52-32.png)
+
+we have the objects of class available with a . (dot) and it tkes less time to reload and fetch us data faster and 
+we can also apply the **inheritence** 
+
+so some basic rules of creating a class component are!
+
+[](2021-05-28-14-17-06.png)
+
+Syntax of a class component :-
+```
+class App extends React.Component {
+    render() {
+        window.navigator.geolocation.getCurrentPosition(
+          position => console.log(position),
+          err => console.log(err)
+        );
+    return (
+
+        );
+    }
+}
+```
+
+## State system in react 
+![](2021-05-28-14-23-39.png)
+and its rules and restrictions.
+
+#### Important ! State can **only** be updated using the function '***setState***'.
+
+use of setstate and state function to fetch latitude from the api and use constructor to initiate the state.
+<details><summary>Code with constructor / state / setstate /api fetch </summary>
+
+![](2021-05-28-14-44-45.png)
+<details>
+class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {lat : null};
+        window.navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({lat : position.coords.latitude});
+                //dont do ever never ever 
+                //this.state.lat = position.coords.latitude
+            },
+            err => console.log(err)
+          );
+    }
+    render() {
+    return <div>Latitude : {this.state.lat} </div>;
+    }
+}
+</details>
+
+How this thing works :
+- First we make class that extends its function from react components
+- Constructor called to initialize the props or state 
+- render function renders the output of the code 
+- Api gets us the values from the user pc 
+- using *setstate* the value is being updated to the state value in the constructor
+- the api call is moved to the constructor so render is called less during execution 
+- and finally we use the state variables in render to display the data 
+- if else statement for conditionality.
+
+
+</details>
+
+### Conditional Rendering
+```
+render() {
+        if(this.state.errM && !this.state.lat)
+            return <div> Error : {this.state.errM} </div>
+
+        if(!this.state.errM && this.state.lat)
+            return <div> Latitude : {this.state.lat} </div>
+    
+        else
+            return <div>Loading! </div>
+    }
+```
+
+## Component Life cycle methods
+```
+componentDidMount(){
+        console.log("didmount");
+    }
+
+componentDidUpdate(){
+        console.log("didupdate");
+    }
+```
+the component functions helps us to do the pre calculations or pre fetching that needs to be done before calling render --- just like api call so we can place the api call inside the life cycle methods 
+
+### state , babel and constructor theory 
+As the js file in react passes through babel so it converts the code into all the javascript readable file and 
+writing state call with constructor can be written as simple 
+```
+state = { lat : null}
+
+------------------which babel converts to -------------
+
+constructor(props){
+        super(props);
+
+        this.state = {lat : null , errM : ""};
+    }
+```
+so writing constructor is not required mandatory !!!!!!!! 
+
+
